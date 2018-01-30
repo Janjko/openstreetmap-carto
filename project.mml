@@ -1423,7 +1423,7 @@ Layer:
               'shop' || CASE WHEN shop IN ('no', 'vacant', 'closed', 'disused', 'empty') OR shop IS NULL THEN NULL ELSE '' END,
               'leisure_' || CASE WHEN leisure IN ('water_park', 'playground', 'miniature_golf', 'golf_course', 'picnic_table',
                                                   'fitness_centre', 'fitness_station', 'firepit') THEN leisure ELSE NULL END,
-              'man_made_' || CASE WHEN man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'obelisk') THEN man_made ELSE NULL END,
+              'man_made_' || CASE WHEN man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'obelisk', 'beacon') THEN man_made ELSE NULL END,
               'natural_' || CASE WHEN "natural" IN ('spring') THEN "natural" ELSE NULL END,
               'historic_' || CASE WHEN historic IN ('memorial', 'monument', 'archaeological_site')
                              THEN concat_ws('_', historic, CASE WHEN tags->'memorial' IN ('plaque') THEN tags->'memorial' ELSE NULL END)
@@ -1460,7 +1460,7 @@ Layer:
             OR shop IS NOT NULL
             OR leisure IN ('water_park', 'playground', 'miniature_golf', 'golf_course', 'picnic_table', 'fitness_centre',
                            'fitness_station', 'firepit')
-            OR man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'obelisk')
+            OR man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'obelisk', 'beacon')
             OR "natural" IN ('spring')
             OR historic IN ('memorial', 'monument', 'archaeological_site')
             OR tags->'memorial' IN ('plaque')
@@ -1515,7 +1515,7 @@ Layer:
               'shop' || CASE WHEN shop IN ('no', 'vacant', 'closed', 'disused', 'empty') OR shop IS NULL THEN NULL ELSE '' END,
               'leisure_' || CASE WHEN leisure IN ('water_park', 'playground', 'miniature_golf', 'golf_course', 'picnic_table', 'slipway',
                                                   'dog_park', 'fitness_centre', 'fitness_station', 'firepit') THEN leisure ELSE NULL END,
-              'man_made_' || CASE WHEN man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'obelisk') THEN man_made ELSE NULL END,
+              'man_made_' || CASE WHEN man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'obelisk', 'beacon') THEN man_made ELSE NULL END,
               'natural_' || CASE WHEN "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'cave_entrance') THEN "natural" ELSE NULL END,
               'historic_' || CASE WHEN historic IN ('memorial', 'monument', 'archaeological_site')
                              THEN concat_ws('_', historic, CASE WHEN tags->'memorial' IN ('plaque') THEN tags->'memorial' ELSE NULL END)
@@ -1563,7 +1563,7 @@ Layer:
             OR shop IS NOT NULL
             OR leisure IN ('water_park', 'playground', 'miniature_golf', 'golf_course', 'picnic_table', 'slipway',
                            'dog_park', 'fitness_centre', 'fitness_station', 'firepit')
-            OR man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'cross', 'obelisk')
+            OR man_made IN ('mast', 'water_tower', 'lighthouse', 'windmill', 'cross', 'obelisk', 'beacon')
             OR "natural" IN ('peak', 'volcano', 'saddle', 'spring', 'cave_entrance')
             OR historic IN ('memorial', 'monument', 'archaeological_site', 'wayside_cross')
             OR tags->'memorial' IN ('plaque')
@@ -1948,7 +1948,7 @@ Layer:
                                                   'residential', 'garages', 'meadow', 'grass', 'allotments', 'forest', 'farmyard', 'farmland',
                                                   'greenhouse_horticulture', 'retail', 'industrial', 'railway', 'commercial', 'brownfield', 'landfill',
                                                   'construction', 'military', 'plant_nursery', 'religious') THEN landuse ELSE NULL END,
-              'man_made_' || CASE WHEN man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'pier', 'breakwater', 'groyne', 'obelisk', 'works') THEN man_made ELSE NULL END,
+              'man_made_' || CASE WHEN man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'pier', 'breakwater', 'groyne', 'obelisk', 'works', 'beacon') THEN man_made ELSE NULL END,
               'natural_' || CASE WHEN "natural" IN ('wood', 'water', 'mud', 'wetland', 'marsh', 'bay', 'spring', 'scree', 'shingle', 'bare_rock', 'sand', 'heath',
                                                     'grassland', 'scrub', 'beach', 'shoal', 'reef', 'glacier') THEN "natural" ELSE NULL END,
               'place_' || CASE WHEN place IN ('island', 'islet') THEN place ELSE NULL END,
@@ -1987,7 +1987,7 @@ Layer:
               OR shop IS NOT NULL
               OR leisure IS NOT NULL
               OR landuse IS NOT NULL
-              OR man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'pier', 'breakwater', 'groyne', 'obelisk', 'works')
+              OR man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'pier', 'breakwater', 'groyne', 'obelisk', 'works', 'beacon')
               OR "natural" IS NOT NULL
               OR place IN ('island', 'islet')
               OR military IN ('danger_area', 'bunker')
@@ -2091,7 +2091,7 @@ Layer:
                                                       'residential', 'garages', 'meadow', 'grass', 'allotments', 'forest', 'farmyard', 'farmland',
                                                       'greenhouse_horticulture', 'retail', 'industrial', 'railway', 'commercial', 'brownfield', 'landfill',
                                                       'construction', 'military', 'plant_nursery') THEN landuse ELSE NULL END,
-                  'man_made_' || CASE WHEN man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'obelisk', 'works') THEN man_made ELSE NULL END,
+                  'man_made_' || CASE WHEN man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'obelisk', 'works', 'beacon') THEN man_made ELSE NULL END,
                   'natural_' || CASE WHEN "natural" IN ('wood', 'peak', 'volcano', 'saddle', 'cave_entrance', 'water', 'mud', 'wetland', 'marsh', 'bay', 'spring',
                                                         'scree', 'shingle', 'bare_rock', 'sand', 'heath', 'grassland', 'scrub', 'beach', 'glacier', 'tree')
                                                         THEN "natural" ELSE NULL END,
@@ -2136,7 +2136,7 @@ Layer:
                   OR landuse IN ('reservoir', 'basin', 'recreation_ground', 'village_green', 'quarry', 'vineyard', 'orchard', 'cemetery', 'residential',
                                  'garages', 'meadow', 'grass', 'allotments', 'forest', 'farmyard', 'farmland', 'greenhouse_horticulture',
                                  'retail', 'industrial', 'railway', 'commercial', 'brownfield', 'landfill', 'construction', 'military', 'plant_nursery')
-                  OR man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'cross', 'obelisk', 'works')
+                  OR man_made IN ('lighthouse', 'windmill', 'mast', 'water_tower', 'cross', 'obelisk', 'works', 'beacon')
                   OR "natural" IS NOT NULL
                   OR place IN ('island', 'islet')
                   OR military IN ('danger_area', 'bunker')

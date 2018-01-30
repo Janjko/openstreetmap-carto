@@ -968,6 +968,13 @@
     marker-clip: false;
     marker-fill: @man-made-icon;
   }
+  
+    [feature = 'man_made_beacon'][zoom >= 15] {
+    marker-file: url('symbols/beacon.svg');
+    marker-placement: interior;
+    marker-clip: false;
+    marker-fill: @man-made-icon;
+  }
 
   [feature = 'natural_peak'][zoom >= 11] {
     marker-file: url('symbols/peak.svg');
@@ -1872,6 +1879,7 @@
   }
 
   [feature = 'man_made_lighthouse'][zoom >= 15],
+  [feature = 'man_made_beacon'][zoom >= 16],
   [feature = 'man_made_windmill'][zoom >= 17] {
     text-name: "[name]";
     text-size: @standard-font-size;
